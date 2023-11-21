@@ -88,29 +88,11 @@
     <figure class="highcharts-figure">
         <div id="container"></div>
         <p class="highcharts-description">
-            Chart showing data updating every second, with old data being removed.
+            Consumo eléctrico en tiempo real actualizado cada 2 segundos.
         </p>
     </figure>
 
-    <div class="ld-form">
-        <div class="ld-row">
-            <label class="ld-label">
-                        Enable Polling
-                    </label>
-            <input type="checkbox" checked="checked" id="enablePolling" />
-        </div>
-        <div class="ld-row">
-            <label class="ld-label">
-                        Polling Time (Seconds)
-                    </label>
-            <input class="ld-time-input" type="number" value="2" id="pollingTime" />
-        </div>
-        <div class="ld-row">
-            <label class="ld-label">
-                    </label>
-            <input class="ld-url-input" type="text" id="fetchURL" />
-        </div>
-    </div>
+
     <script>
         // On chart load, start an interval that adds points to the chart and animate
         // the pulsating marker.
