@@ -105,6 +105,7 @@
         document.getElementById('output').innerText = listEjeY;
         document.getElementById('output2').innerText = listEjeY.length;
         document.getElementById('output3').innerText = listEjeY[0], listEjeY[1];
+        document.getElementById('output4').innerText = typeof lis;
         if (listEjeY.length > 0) {
             document.getElementById('output2').innerText = listEjeY[0];
         }
@@ -126,7 +127,7 @@
             const data = [];
             const time = new Date().getTime();
             let contador = 0;
-            if (listEjeY.length > 5) {
+            if (listEjeY.length > 15) {
                 for (let i = 0 - listEjeY.length; i <= 0; i += 1) {
                     data.push({
                         x: time + i * 1000,
