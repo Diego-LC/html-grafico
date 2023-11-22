@@ -93,6 +93,7 @@
     </figure>
 
     <div id="output"></div>
+    <div id="output2"></div>
 
     <script>
         // On chart load, start an interval that adds points to the chart and animate
@@ -100,6 +101,10 @@
         var ejeY = 0;
         var listEjeY = window.AppInventor.getWebViewString();
         document.getElementById('output').innerText = listEjeY;
+        if (listEjeY.length > 0) {
+            document.getElementById('output2').innerText = listEjeY[0];
+        }
+        document.getElementById('output2').innerText = listEjeY[0];
         const onChartLoad = function() {
             const chart = this,
                 series = chart.series[0];
@@ -120,7 +125,7 @@
             for (let i = -29; i <= 0; i += 1) {
                 data.push({
                     x: time + i * 1000,
-                    y: parseInt(listEjeY[contador]) //Traer dato de la base de datos y transformarlo a int
+                    y: listEjeY[contador] //Traer dato de la base de datos y transformarlo a int
                 });
                 contador++;
             };
