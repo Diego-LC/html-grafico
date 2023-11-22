@@ -105,7 +105,7 @@
         var listEjeY = JSON.parse(window.AppInventor.getWebViewString());
         list1.split(',');
         document.getElementById('output').innerText = listEjeY;
-        document.getElementById('output2').innerText = listEjeY.length;
+        document.getElementById('output2').innerText = "Longitud: " + listEjeY.length;
         document.getElementById('output3').innerText = listEjeY[0] + " lista[2]: " + listEjeY[2];
         document.getElementById('output4').innerText = typeof listEjeY;
         if (listEjeY.length > 0) {
