@@ -97,6 +97,7 @@
         // On chart load, start an interval that adds points to the chart and animate
         // the pulsating marker.
         var ejeY = 0;
+        var listEjeY = [];
         const onChartLoad = function() {
             const chart = this,
                 series = chart.series[0];
@@ -113,12 +114,13 @@
         const data = (function() {
             const data = [];
             const time = new Date().getTime();
-
+            let contador = 0;
             for (let i = -19; i <= 0; i += 1) {
                 data.push({
                     x: time + i * 1000,
-                    y: Math.random()
+                    y: listEjeY[contador]
                 });
+                contador++;
             }
             return data;
         }());
