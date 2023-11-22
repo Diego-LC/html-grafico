@@ -67,7 +67,7 @@
 <div id="output">
     </di>
     <script>
-        var datos = window.AppInventor.getWebViewString();
+        var datos = window.AppInventor.getWebViewString().replace(/[["\] ]/g, "").split(',');
         document.getElementById('output').innerText = datos;
         (async() => { // Load the dataset 
             // Load the dataset
