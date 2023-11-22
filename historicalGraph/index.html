@@ -77,11 +77,11 @@
         function createDetail(masterChart) {
             // prepare the detail chart
             const detailData = [],
-                detailStart = data[0][0];
+                detailStart = data[0];
 
             masterChart.series[0].data.forEach(point => {
                 if (point.x >= detailStart) {
-                    detailData.push(point.y);
+                    detailData.push(parseInt(point.y));
                 }
             });
 
