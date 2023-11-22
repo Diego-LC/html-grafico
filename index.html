@@ -122,13 +122,23 @@
             const data = [];
             const time = new Date().getTime();
             let contador = 0;
-            for (let i = -29; i <= 0; i += 1) {
-                data.push({
-                    x: time + i * 1000,
-                    y: listEjeY[contador] //Traer dato de la base de datos y transformarlo a int
-                });
-                contador++;
-            };
+            if (listEjeY.length > 5) {
+                for (let i = 0 - listEjeY.length; i <= 0; i += 1) {
+                    data.push({
+                        x: time + i * 1000,
+                        y: listEjeY[contador] //Traer dato de la base de datos y transformarlo a int
+                    });
+                    contador++;
+                };
+            } else {
+                for (let i = 0 - 19; i <= 0; i += 1) {
+                    data.push({
+                        x: time + i * 1000,
+                        y: 0 //Traer dato de la base de datos y transformarlo a int
+                    });
+                    contador++;
+                };
+            }
             return data;
         }());
 
