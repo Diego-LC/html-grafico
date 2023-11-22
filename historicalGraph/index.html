@@ -68,7 +68,6 @@
     </di>
     <script>
         var datos = window.AppInventor.getWebViewString();
-        document.getElementById('output').innerText = datos;
         (async() => { // Load the dataset 
             // Load the dataset
             const data = await JSON.parse(datos);
@@ -269,7 +268,7 @@
 
                     series: [{
                         type: 'area',
-                        name: 'USD to EUR',
+                        name: 'Watts',
                         pointInterval: 24 * 3600 * 1000,
                         pointStart: data[0][0],
                         data: data

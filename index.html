@@ -101,13 +101,7 @@
         // On chart load, start an interval that adds points to the chart and animate
         // the pulsating marker.
         var ejeY = 0;
-        var list1 = window.AppInventor.getWebViewString().replace(/[["\] ]/g, "");
         var listEjeY = JSON.parse(window.AppInventor.getWebViewString());
-        list1.split(',');
-        document.getElementById('output').innerText = listEjeY;
-        document.getElementById('output2').innerText = "Longitud: " + listEjeY.length;
-        document.getElementById('output3').innerText = listEjeY[0] + " lista[2]: " + listEjeY[2];
-        document.getElementById('output4').innerText = typeof listEjeY;
         if (listEjeY.length > 0) {
             document.getElementById('output2').innerText = listEjeY[0];
         }
