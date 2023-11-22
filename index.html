@@ -94,13 +94,17 @@
 
     <div id="output"></div>
     <div id="output2"></div>
+    <div id="output3"></div>
+    <div id="output4"></div>
 
     <script>
         // On chart load, start an interval that adds points to the chart and animate
         // the pulsating marker.
         var ejeY = 0;
-        var listEjeY = window.AppInventor.getWebViewString();
+        var listEjeY = window.AppInventor.getWebViewString().json();
         document.getElementById('output').innerText = listEjeY;
+        document.getElementById('output2').innerText = listEjeY.length;
+        document.getElementById('output3').innerText = listEjeY[0], listEjeY[1];
         if (listEjeY.length > 0) {
             document.getElementById('output2').innerText = listEjeY[0];
         }
