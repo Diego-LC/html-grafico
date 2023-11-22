@@ -67,11 +67,11 @@
 <div id="output">
     </di>
     <script>
-        var datos = String(window.AppInventor.getWebViewString().replace(/[["\] ]/g, "")).split(',');
+        var datos = window.AppInventor.getWebViewString();
         document.getElementById('output').innerText = datos;
         (async() => { // Load the dataset 
             // Load the dataset
-            const data = await datos.json();
+            const data = await JSON.parse(datos);
 
             let detailChart;
 
