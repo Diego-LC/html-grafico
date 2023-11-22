@@ -111,17 +111,20 @@
         };
 
         // Create the initial data
+        var data = [];
+
         function inicialData() {
             const data = [];
             const time = new Date().getTime();
             let contador = 0;
-            for (let i = -19; i <= 0; i += 1) {
+            for (let i = -29; i <= 0; i += 1) {
                 data.push({
                     x: time + i * 1000,
                     y: parseInt(listEjeY[contador]) //Traer dato de la base de datos y transformarlo a int
                 });
                 contador++;
-            }
+            };
+            return data;
         };
 
         // Plugin to add a pulsating marker on add point
@@ -190,7 +193,7 @@
 
             yAxis: {
                 title: {
-                    text: 'Value'
+                    text: 'Watts'
                 },
                 plotLines: [{
                     value: 0,
@@ -209,11 +212,11 @@
             },
 
             exporting: {
-                enabled: false
+                enabled: true
             },
 
             series: [{
-                name: 'Random data',
+                name: 'Consumo eléctrico',
                 lineWidth: 2,
                 color: Highcharts.getOptions().colors[2],
                 data
