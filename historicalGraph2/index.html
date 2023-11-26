@@ -78,7 +78,7 @@
                 zoomType: 'x'
             },
             title: {
-                text: 'USD to EUR exchange rate over time',
+                text: 'Consumo de energía en Watts por hora',
                 align: 'left'
             },
             subtitle: {
@@ -121,6 +121,9 @@
                         }
                     },
                     threshold: null
+                },
+                time: {
+                    useUTC: false
                 }
             },
 
@@ -128,7 +131,28 @@
                 type: 'area',
                 name: 'Consumo de energía en Watts',
                 data: data
-            }]
+            }],
+            responsive: {
+                rules: [{
+                    condition: {
+                        maxWidth: 500
+                    },
+                    chartOptions: {
+                        chart: {
+                            height: 300
+                        },
+                        subtitle: {
+                            text: null
+                        },
+                        navigator: {
+                            enabled: false
+                        }
+                    }
+                }]
+            },
+            exporting: {
+                enabled: true
+            }
         });
     })();
 </script>
