@@ -234,7 +234,25 @@
                 lineWidth: 2,
                 color: Highcharts.getOptions().colors[2],
                 data
-            }]
+            }],
+            responsive: {
+                rules: [{
+                    condition: {
+                        maxWidth: 500
+                    },
+                    chartOptions: {
+                        chart: {
+                            height: 500
+                        },
+                        subtitle: {
+                            text: null
+                        },
+                        navigator: {
+                            enabled: false
+                        }
+                    }
+                }]
+            }
         });
     </script>
 </body>
