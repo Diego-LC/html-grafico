@@ -102,10 +102,6 @@
         // the pulsating marker.
         var ejeY = 0;
         var listEjeY = JSON.parse(window.AppInventor.getWebViewString());
-        if (listEjeY.length > 0) {
-            document.getElementById('output2').innerText = listEjeY[0];
-        }
-        document.getElementById('output2').innerText = listEjeY[0];
         const onChartLoad = function() {
             const chart = this,
                 series = chart.series[0];
@@ -123,11 +119,11 @@
             const data = [];
             const time = new Date().getTime();
             let contador = 0;
-            if (listEjeY.length > 15) {
+            if (listEjeY.length > 10) {
                 for (let i = 0 - listEjeY.length; i <= 0; i += 1) {
                     data.push({
                         x: time + i * 1000,
-                        y: listEjeY[contador] //Traer dato de la base de datos y transformarlo a int
+                        y: listEjeY[contador-1] //Traer dato de la base de datos y transformarlo a int
                     });
                     contador++;
                 };
