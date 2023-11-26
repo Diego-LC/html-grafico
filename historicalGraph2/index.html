@@ -67,11 +67,11 @@
     </figure>
 </body>
 <script>
-    //var datos = window.AppInventor.getWebViewString();
+    var datos = window.AppInventor.getWebViewString();
     (async () => {
 
-        //const data = await JSON.parse(datos);
-        const data = await fetch('https://cdn.jsdelivr.net/gh/highcharts/highcharts@v10.3.3/samples/data/usdeur.json').then(response => response.json());
+        const data = await JSON.parse(datos);
+        //const data = await fetch('https://cdn.jsdelivr.net/gh/highcharts/highcharts@v10.3.3/samples/data/usdeur.json').then(response => response.json());
 
         Highcharts.chart('container', {
             chart: {
@@ -143,7 +143,7 @@
                     },
                     chartOptions: {
                         chart: {
-                            height: 400
+                            height: 350
                         },
                         subtitle: {
                             text: null
