@@ -131,6 +131,11 @@
                 name: 'Consumo de energía en Watts',
                 data: data
             }],
+            
+            tooltip: {
+                headerFormat: '<b>{series.name}</b><br/>',
+                pointFormat: '{point.x:%d-%m-%Y %H:%M:%S}<br/>{point.y}'
+            },
             responsive: {
                 rules: [{
                     condition: {
