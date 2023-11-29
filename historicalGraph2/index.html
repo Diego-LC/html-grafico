@@ -70,8 +70,8 @@
     var datos = window.AppInventor.getWebViewString();
     (async () => {
 
-        const data = await JSON.parse(datos);
-        //const data = await fetch('https://cdn.jsdelivr.net/gh/highcharts/highcharts@v10.3.3/samples/data/usdeur.json').then(response => response.json());
+        //const data = await JSON.parse(datos);
+        const data = await fetch('https://cdn.jsdelivr.net/gh/highcharts/highcharts@v10.3.3/samples/data/usdeur.json').then(response => response.json());
 
         Highcharts.chart('container', {
             chart: {
@@ -128,13 +128,14 @@
             },
             series: [{
                 type: 'area',
-                name: 'Consumo de energía en Watts',
+                name: 'Consumo de energía en Watts-hora',
                 data: data
             }],
             
             tooltip: {
                 headerFormat: '<b>{series.name}</b><br/>',
-                pointFormat: '{point.x:%d-%m-%Y %H:%M:%S}<br/>{point.y}'
+                pointFormat: '{point.x:%d-%m-%Y %H:%M:%S}<br/>{point.y} Watts-hora',
+                useHTML: true
             },
             responsive: {
                 rules: [{
