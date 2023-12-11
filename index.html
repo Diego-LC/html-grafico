@@ -9,7 +9,7 @@
     <style>
         .highcharts-figure,
         .highcharts-data-table table {
-            min-width: 360px;
+            min-width: 200px;
             margin: 1em auto;
         }
         .highcharts-figure #container .highcharts-container {
@@ -81,7 +81,7 @@
         }
         
         .ld-url-input {
-            width: 400px;
+            min-width: 200px;
             max-width: calc(100% - 2rem);
             visibility: hidden;
         }
@@ -96,9 +96,6 @@
 
     <figure class="highcharts-figure">
         <div id="container"></div>
-        <p class="highcharts-description">
-            Consumo eléctrico en tiempo real actualizado cada 2 segundos.
-        </p>
     </figure>
 
     <div id="output"></div>
@@ -190,7 +187,7 @@
             },
 
             title: {
-                text: 'Consumo eléctrico en Watts cada dos segundos'
+                text: 'Potencia eléctrica en Watts actualizada cada dos segundos'
             },
 
             accessibility: {
@@ -239,7 +236,7 @@
             series: [{
                 name: 'Consumo eléctrico',
                 lineWidth: 2,
-                color: Highcharts.getOptions().colors[2],
+                color: Highcharts.getOptions().colors[1],
                 data
             }],
             responsive: {
