@@ -73,7 +73,7 @@
             min-width: 250px;
             /* max-width: 500px; */
             margin: 2px auto;
-            min-height: 650px;
+            min-height: 670px;
             font-size: 1em !important;
             /* max-height: 400px; */
         }
@@ -104,12 +104,12 @@
     </footer> -->
     </div>
     <script>
-    //var datos = window.AppInventor.getWebViewString();
+    var datos = window.AppInventor.getWebViewString();
     (async () => {
 
-            //const data = await JSON.parse(datos);
-            const data = await fetch('https://cdn.jsdelivr.net/gh/highcharts/highcharts@v10.3.3/samples/data/usdeur.json'
-                ).then(response => response.json());
+            const data = await JSON.parse(datos);
+            //const data = await fetch('https://cdn.jsdelivr.net/gh/highcharts/highcharts@v10.3.3/samples/data/usdeur.json'
+              //  ).then(response => response.json());
 
                 Highcharts.stockChart('container', {
                     chart: {
@@ -239,6 +239,9 @@
                     },
                     credits: {
                         enabled: false
+                    },
+                    navigator: {
+                        enabled: true,
                     }
                     
                 });
