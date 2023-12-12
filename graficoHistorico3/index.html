@@ -73,7 +73,7 @@
             min-width: 250px;
             /* max-width: 500px; */
             margin: 2px auto;
-            min-height: 600px;
+            min-height: 650px;
             font-size: 1em !important;
             /* max-height: 400px; */
         }
@@ -113,10 +113,21 @@
 
                 Highcharts.stockChart('container', {
                     chart: {
-                        zoomType: 'x'
+                        zoomType: 'x',
                     },
-                    style: {
-                        fontSize: '1.5em'
+                    rangeSelector: {
+                        labelStyle: {
+                            fontSize: '1.5em'
+                        },
+                        inputStyle: {
+                            fontSize: '1.5em'
+                        },
+                        buttonTheme: {
+                            width: 60,
+                            style: {
+                                fontSize: '1.5em'
+                            }
+                        },
                     },
                     title: {
                         text: 'Datos de consumo de energía en el tiempo',
