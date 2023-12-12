@@ -60,20 +60,22 @@
     <style>
         body {
             /* zoom: 1.8; */
+            font-size: 2em !important;
         }
-        .highcharts-figure, .highcharts-data-table table {
+        .highcharts-figure, #comtainer, .highcharts-data-table table {
             min-width: 320px;
             /* max-width: 800px; */
             /* margin: 1em auto; */
-            min-height: 200px;
+            min-height: 550px !important;
             max-height: 600px;
         }
         .highcharts-container {
             min-width: 250px;
             /* max-width: 500px; */
             margin: 2px auto;
-            min-height: 200px;
-            max-height: 400px;
+            min-height: 600px;
+            font-size: 1em !important;
+            /* max-height: 400px; */
         }
         h2 {
             text-align: center;
@@ -84,6 +86,8 @@
         }
         .contenedor {
             margin: 20px;
+            /* font-size: 2em; */
+            width: 700p;
         }
     </style>
 </head>
@@ -105,27 +109,49 @@
 
             const data = await JSON.parse(datos);
             //const data = await fetch('https://cdn.jsdelivr.net/gh/highcharts/highcharts@v10.3.3/samples/data/usdeur.json'
-            //    ).then(response => response.json());
+              //  ).then(response => response.json());
 
                 Highcharts.stockChart('container', {
                     chart: {
                         zoomType: 'x'
                     },
+                    style: {
+                        fontSize: '1.5em'
+                    },
                     title: {
                         text: 'Datos de consumo de energía en el tiempo',
-                        align: 'left'
+                        align: 'left',
+                        style: {
+                            fontSize: '2em'
+                        }
                     },
                     subtitle: {
                         text: document.ontouchstart === undefined ?
                             'Haz clic y arrastra en el área de trazado para hacer zoom' : 'Pinch the chart to zoom in',
-                        align: 'left'
+                        align: 'left',
+                        style: {
+                            fontSize: '1.5em'
+                        }
                     },
                     xAxis: {
-                        type: 'datetime'
+                        type: 'datetime',
+                        labels: {
+                            style: {
+                                fontSize: '1.5em'
+                            }
+                        }
                     },
                     yAxis: {
                         title: {
-                            text: 'Consumo de energía (KWh)'
+                            text: 'Consumo de energía (KWh)',
+                            style: {
+                                fontSize: '1.5em'
+                            }
+                        },
+                        labels: {
+                            style: {
+                                fontSize: '1.5em'
+                            }
                         }
                     },
                     legend: {
@@ -161,7 +187,12 @@
                     series: [{
                         type: 'area',
                         name: 'consumo (KWh)',
-                        data: data
+                        data: data,
+                        gapSize: 5,
+                        tooltip: {
+                            valueDecimals: 2
+                        },
+                        color: '#003F90'
                     }],
                     responsive: {
                         rules: [{
@@ -184,7 +215,8 @@
                     tooltip: {
                         headerFormat: '<b>{series.name}</b><br/>',
                         pointFormat: '{point.x:%d/%m/%Y %H:%M:%S}<br/>{point.y} KWh',
-                        useHTML: true
+                        useHTML: true,
+                        valueDecimals: 4
                     },
                     exporting: {
                         enabled: true
@@ -193,6 +225,9 @@
                         announceNewData: {
                             enabled: true
                         }
+                    },
+                    credits: {
+                        enabled: false
                     }
                     
                 });
