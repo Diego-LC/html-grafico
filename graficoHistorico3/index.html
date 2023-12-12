@@ -5,7 +5,7 @@
     <title>Grafico de temperatura</title>
     <style>
 .highcharts-data-table table {
-    font-family: Verdana, sans-serif;
+    /* font-family: Verdana, sans-serif; */
     border-collapse: collapse;
     border: 1px solid #ebebeb;
     margin: 10px auto;
@@ -16,7 +16,7 @@
 
 .highcharts-data-table caption {
     padding: 1em 0;
-    font-size: 1.2em;
+    font-size: 1em;
     color: #555;
 }
 
@@ -94,12 +94,12 @@
         </footer> -->
     </div>
     <script>
-    var datos = window.AppInventor.getWebViewString();
+    //var datos = window.AppInventor.getWebViewString();
     (async () => {
 
-            const data = await JSON.parse(datos);
-            //const data = await fetch('https://cdn.jsdelivr.net/gh/highcharts/highcharts@v10.3.3/samples/data/usdeur.json'
-               // ).then(response => response.json());
+            //const data = await JSON.parse(datos);
+            const data = await fetch('https://cdn.jsdelivr.net/gh/highcharts/highcharts@v10.3.3/samples/data/usdeur.json'
+                ).then(response => response.json());
 
                 Highcharts.stockChart('container', {
                     chart: {
@@ -166,7 +166,7 @@
                             chartOptions: {
                                 chart: {
                                     minHeight: 200,
-                                    Height: 300
+                                    Height: 250
                                 },
                                 subtitle: {
                                     text: null
