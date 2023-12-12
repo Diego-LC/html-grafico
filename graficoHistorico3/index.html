@@ -59,11 +59,7 @@
     <script src="https://code.highcharts.com/stock/highstock.js"></script>
     <style>
         body {
-            font-family: Arial;
-            margin: 0;
-            padding: 5px;
-            color: #555;
-            height: 100vh;
+            zoom: 1.8;
         }
         .highcharts-figure, .highcharts-data-table table {
             min-width: 320px;
@@ -108,8 +104,8 @@
     (async () => {
 
             const data = await JSON.parse(datos);
-/*             const data = await fetch('https://cdn.jsdelivr.net/gh/highcharts/highcharts@v10.3.3/samples/data/usdeur.json'
-                ).then(response => response.json()); */
+            //const data = await fetch('https://cdn.jsdelivr.net/gh/highcharts/highcharts@v10.3.3/samples/data/usdeur.json'
+               // ).then(response => response.json());
 
                 Highcharts.stockChart('container', {
                     chart: {
@@ -174,7 +170,7 @@
                             },
                             chartOptions: {
                                 chart: {
-                                    height: 300
+                                    minHeight: 200
                                 },
                                 subtitle: {
                                     text: null
